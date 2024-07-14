@@ -31,19 +31,23 @@ def main():
                         date = input("Enter the date (YYYY-MM-DD): ")
                         patient.save_parameters(height, weight, date)
                     elif sub_choice == '2':
-                        bmi = BMICalculator.calculate_bmi(patient.height, patient.weight)
-                        print(f"Your BMI is: {bmi}")
+                        if patient.height and patient.weight:
+                            bmi = BMICalculator.calculate_bmi(patient.height, patient.weight)
+                            print(f"Your BMI is: {bmi}")
+                        else:
+                            print("Please enter your parameters first.")
                     elif sub_choice == '3':
                         patient.view_history()
                     elif sub_choice == '4':
-                        tips = ChatGPT.get_health_tips()
-                        print(tips)
+                        print("Please visit this health site to understand more on how to have a healthy life, click on this link:https://www.who.int/europe/news-room/fact-sheets/item/a-healthy-lifestyle---who-recommendations")
                     elif sub_choice == '5':
                         query = input("Enter your query: ")
                         response = ChatGPT.chat(query)
                         print(response)
                     elif sub_choice == '6':
                         break
+                    else:
+                        print("Invalid choice. Please try again.")
         elif choice == '3':
             print("Exiting...")
             break
