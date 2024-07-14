@@ -1,5 +1,7 @@
 import csv
 import os
+from tabulate import tabulate
+from bmi_calculator import BMICalculator  # Import the BMICalculator class
 
 class Patient:
     def __init__(self, username, height=None, weight=None, date=None):
@@ -37,9 +39,14 @@ class Patient:
     def view_history(self):
         filepath = f'data/{self.username}_data.csv'
         if os.path.exists(filepath):
+            data = []
             with open(filepath, mode='r') as file:
                 reader = csv.reader(file)
                 for row in reader:
-                    print(row)
+                    height, weight, date = float(row[0]), float(row[1]), row[2]
+                    bmi = BMICalculator.calculate_bmi(height, weight)
+                    data.append([date, height, weight, bmi])
+            headers = ["Date", "Height (cm)", "Weight (kg)", "BMI"]
+            print(tabulate(data, headers=headers))
         else:
             print("No history found.")
