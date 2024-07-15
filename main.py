@@ -46,7 +46,7 @@ def main():
                         elif sub_choice == '3':
                             patient.view_history()
                         elif sub_choice == '4':
-                            print("Here are some health tips: Stay hydrated, eat balanced meals, and exercise regularly.")
+                            print("You need a documentation about your health status hold ctrl on your keyboard and click:https://www.betterhealth.vic.gov.au/health/healthyliving/body-mass-index-bmi")
                         elif sub_choice == '5':
                             query = input(f"Hi {patient.username} I would like to know how to help : ")
                             model = genai.GenerativeModel('gemini-1.5-flash')
