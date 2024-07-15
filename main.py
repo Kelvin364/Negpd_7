@@ -49,7 +49,7 @@ def main():
                         elif sub_choice == '4':
                             print("Here are some health tips: Stay hydrated, eat balanced meals, and exercise regularly.")
                         elif sub_choice == '5':
-                            query = input(f"Hi {patient} I would like to know how to help : ")
+                            query = input(f"Hi {patient.username} I would like to know how to help : ")
                             model = genai.GenerativeModel('gemini-1.5-flash')
                             response = model.generate_content(query)
                             print(response.text)

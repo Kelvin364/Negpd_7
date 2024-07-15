@@ -25,17 +25,17 @@
 # print(chatgpt.get_health_tips())
 # response = chatgpt.chat("What are the benefits of regular exercise?")
 # print(response)
-import os
-import google.generativeai as genai
-from dotenv import load_dotenv
+# import os
+# import google.generativeai as genai
+# from dotenv import load_dotenv
 
-load_dotenv()  
+# load_dotenv()  
 
-genai.configure(api_key=os.environ["API_KEY"])
+# genai.configure(api_key=os.environ["API_KEY"])
 
-model = genai.GenerativeModel('gemini-1.5-flash')
-response = model.generate_content("Write a story about a AI and magic")
-print(response.text)
+# model = genai.GenerativeModel('gemini-1.5-flash')
+# response = model.generate_content("Write a story about a AI and magic")
+# print(response.text)
 
 
 # api_key = os.getenv('OPENAI_API_KEY')
