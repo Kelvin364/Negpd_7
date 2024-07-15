@@ -1,7 +1,7 @@
 import csv
 import os
 from tabulate import tabulate
-from bmi_calculator import BMICalculator  # Import the BMICalculator class
+from bmi_calculator import BMICalculator  
 
 class Patient:
     def __init__(self, username, height=None, weight=None, date=None):

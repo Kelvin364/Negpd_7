@@ -7,7 +7,6 @@ from dotenv import load_dotenv
 
 def main():
     load_dotenv()
-    # Initialize ChatGPT with the API key
     api_key = os.environ["API_KEY"]
     genai.configure(api_key=api_key)
 
